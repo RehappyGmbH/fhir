@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2020-11-23T17:37:05.859+01:00" />
+  </meta>
+  <url value="https://rehappy.de/fhir/StructureDefinition/appointment-de/" />
+ <version value="1.0.0" />
+  <name value="appointment-backing-de" />
+  <title value="Persönlicher Termin" />
+  <status value="active" />
+  <date value="2020-11-23" />
+  <description value="Erweiterung zur Erfassung von persönlichen Terminen einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+  <fhirVersion value="4.0.1" />
+  <publisher value="Rehappy GmbH" />
+  <contact>
+    <name value="Rehappy GmbH" />
+    <telecom>
+      <system value="email" />
+      <value value="info@rehappy.de" />
+      <use value="work" />
+    </telecom>
+  </contact>
+
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element"/>
+    <expression value="Person" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <short value="Persönlicher Termin in der Patientenbegleitung" />
+      <definition value="Erweiterung zur Erfassung von persönlichen Terminen einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <comment value="Zur Unterstützung bei der Bewältigung organisatorischer Hürden in der Begleitung neurologischer Patienten können durch den Patienten selbst Termine erfasst werden." />
+      <path value="Extension" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://rehappy.de/fhir/StructureDefinition/appointment-de/" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Appointment" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

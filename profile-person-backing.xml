@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2020-11-23T15:50:10.963-06:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm" />
+  </extension>
+  <url value="https://rehappy.de/fhir/StructureDefinition/person-backing-de/" />
+ <version value="0.2.4" />
+  <name value="person-backing-de" />
+  <title value="Begleitung von neurologischen Patienten" />
+  <description value="Profil zur interoperablen Darstellung von Daten im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+  <status value="active" />
+  <date value="2020-11-23" />
+  <publisher value="Rehappy GmbH" />
+  <contact>
+    <name value="Rehappy GmbH" />
+    <telecom>
+      <system value="email" />
+      <value value="info@rehappy.de" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <copyright value="Rehappy GmbH" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Person" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Person" />
+  <differential>
+    <element id="Person">
+      <path value="Person" />
+      <short value="Profil zur interoperablen Darstellung von Daten in der Patientenbegleitung" />
+      <definition value="Profil zur interoperablen Darstellung von Daten im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <comment value="Dieses Profil dient der Erfassung von Daten von Personen im Rahmen einer Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte. Die Begleitung dient dem Zweck der Linderung der Beeinträchtigung durch Motivation für eine gesteigerte Therapieteilnahme, Verbesserung der Wahrnehmung der Selbstwirksamkeit, Vermittlung positiver Coping-Strategien, Förderung der intrinsischen Motivation und des Gesundheitsverhaltens und der Bewältigung organisatorischer/bürokratischer Hürden. Das Profil beinhaltet neben grundlegenden Informationen Erweiterungen für die Person zur Erfassung von persönlichen Daten. Zu diesen gehören persönliche Ziele, Termine und Aufgaben, körperliche Aktivität, Beobachtung des persönlichen Fortschritts und Befindens durch Befragungen und erstellten Mediandateien sowie die aus Befragungen abgeleiteten Themenbereiche und Motivationskonzepte bezüglich der Einschränkungen und psychologischen Konditionierung." />
+    </element>
+    <element id="Person.extension:health-de">
+      <path value="Person.extension" />
+      <sliceName value="health-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/health-de/" />
+      </type>
+    </element>
+    <element id="Person.extension:activity-de">
+      <path value="Person.extension" />
+      <sliceName value="activity-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/activity-de/" />
+      </type>
+    </element>
+    <element id="Person.extension:current-goals-de">
+      <path value="Person.extension" />
+      <sliceName value="current-goals-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/current-goals-de/" />
+      </type>
+      <max value="1" />
+    </element>
+    <element id="Person.extension:achieved-goal-de">
+      <path value="Person.extension" />
+      <sliceName value="achieved-goal-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/achieved-goal-de/" />
+      </type>
+    </element>
+    <element id="Person.extension:appointment-de">
+      <path value="Person.extension" />
+      <sliceName value="appointment-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/appointment-de/" />
+      </type>
+    </element>
+    <element id="Person.extension:task-de">
+      <path value="Person.extension" />
+      <sliceName value="task-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/task-de/" />
+      </type>
+    </element>
+    <element id="Person.extension:response-de">
+      <path value="Person.extension" />
+      <sliceName value="response-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/response-de/" />
+      </type>
+    </element>
+    <element id="Person.extension:media-de">
+      <path value="Person.extension" />
+      <sliceName value="media-de" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://rehappy.de/fhir/StructureDefinition/media-de/" />
+      </type>
+    </element>
+    <element id="Person.birthDate">
+      <path value="Person.birthDate"/>
+      <min value="1" />
+    </element>
+    <element id="Person.link">
+      <path value="Person.link"/>
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="Person.link muss mindestens ein BackboneElement mit einer target Referenz auf eine Patient Ressource beinhalten." />
+        <expression value="Person.link.empty().not() and Person.link.exists($this.target.is(Reference(Patient)))" />
+      </constraint>
+    </element>
+  </differential>
+</StructureDefinition>

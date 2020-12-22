@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2020-11-23T17:37:05.859+01:00" />
+  </meta>
+  <url value="https://rehappy.de/fhir/StructureDefinition/response-de/" />
+ <version value="1.0.0" />
+  <name value="response-backing-de" />
+  <title value="Beantwortung von Tagebuch Befragungen" />
+  <description value="Erweiterung zur Erfassung von Antworten aus der Befragung der Person durch maschinell erstellte Tagebuchbefragungen zur Motivation und Reflexion im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+  <status value="active" />
+  <date value="2020-11-23" />
+  <fhirVersion value="4.0.1" />
+  <publisher value="Rehappy GmbH" />
+  <contact>
+    <name value="Rehappy GmbH" />
+    <telecom>
+      <system value="email" />
+      <value value="info@rehappy.de" />
+      <use value="work" />
+    </telecom>
+  </contact>
+
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element"/>
+    <expression value="Person" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <short value="Beantwortung von Tagebuch Befragungen in der Patientenbegleitung" />
+      <definition value="Erweiterung zur Erfassung von Antworten aus der Befragung der Person durch maschinell erstellte Tagebuchbefragungen zur Motivation und Reflexion im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <comment value="Die Person hat im Rahmen der Patientenbegleitung die Möglichkeit, algorithmisch zusammengestellte Tagebuch-Befragungen zu beantworten." />
+      <path value="Extension" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://rehappy.de/fhir/StructureDefinition/response-de/" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

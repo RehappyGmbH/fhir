@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2020-11-23T17:37:05.859+01:00" />
+  </meta>
+  <url value="https://rehappy.de/fhir/StructureDefinition/health-de/" />
+ <version value="1.0.0" />
+  <name value="health-backing-de" />
+  <title value="Körperliche Einschränkung oder psychologische Konditionierung" />
+  <description value="Erweiterung zur Erfassung von Daten zur Beschreibung des Gesundheitszustands und der psychologischen Konditionierung einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte, welche algorithmisch aus z.B. Fragebögen abgeleitet werden, die durch die Person eigenständig ausgefüllt werden" />
+  <status value="active" />
+  <date value="2020-11-23" />
+  <fhirVersion value="4.0.1" />
+  <publisher value="Rehappy GmbH" />
+  <contact>
+    <name value="Rehappy GmbH" />
+    <telecom>
+      <system value="email" />
+      <value value="info@rehappy.de" />
+      <use value="work" />
+    </telecom>
+  </contact>
+
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element"/>
+    <expression value="Person" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <short value="Durch z.B. Fragebögen erfasste körperliche Einschränkung oder psychologische Konditionierung" />
+      <definition value="Erweiterung zur Erfassung von Daten zur Beschreibung des Gesundheitszustands und der psychologischen Konditionierung einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte, welche algorithmisch aus z.B. Fragebögen abgeleitet werden, die durch die Person eigenständig ausgefüllt werden" />
+      <comment value="Um einer Person im Rahmen der Patientenbegleitung geeignete Wissens- und Motivationsinhalte anbieten zu können, werden Informationen zu den Themengebieten benötigt, in denen Einschränkungen vorliegen. Neben den Themengebieten wird ein zur psychologischen Konditionierung passendes Motivationskonzept zugeordnet. Betroffene Themengebiete und Motivationskomponenten werden in Form von ICF Codierungen als Zustand der Person abgebildet." />
+      <path value="Extension" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://rehappy.de/fhir/StructureDefinition/health-de/" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

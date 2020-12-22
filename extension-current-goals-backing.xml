@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2020-11-23T17:37:05.859+01:00" />
+  </meta>
+  <url value="https://rehappy.de/fhir/StructureDefinition/current-goals-de/" />
+ <version value="1.0.0" />
+  <name value="current-goals-backing-de" />
+  <title value="Persönliche aktuelle Ziele" />
+  <description value="Erweiterung zur Erfassung aktuell gesetzter persönlicher Ziele einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+  <status value="active" />
+  <date value="2020-11-23" />
+  <fhirVersion value="4.0.1" />
+  <publisher value="Rehappy GmbH" />
+  <contact>
+    <name value="Rehappy GmbH" />
+    <telecom>
+      <system value="email" />
+      <value value="info@rehappy.de" />
+      <use value="work" />
+    </telecom>
+  </contact>
+
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element"/>
+    <expression value="Person" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Persönliche aktuelle Ziele in der Patientenbegleitung" />
+      <definition value="Erweiterung zur Erfassung aktuell gesetzter persönlicher Ziele einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <comment value="Zum Konzept einer Begleitung von neurologischen Patienten mit Motivationsinhalten gehört die Anregung, sich als Patient auf seinem Genesungsweg realistische Ziele zu setzen und diese zu erreichen. Dabei kann sich der Patient genau ein kurzfristiges, ein mittelfristiges und ein langfristiges Ziel setzen. Hat er eines dieser Ziele erreicht, kann er sich für die jeweilige Frist ein neues setzen." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+
+<element id="Extension.extension:current-goal-shortterm">
+      <path value="Extension.extension" />
+      <sliceName value="current-goal-shortterm" />
+      <definition value="Erfassung des aktuellen, persönlichen kurzfristigen Ziels einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:current-goal-shortterm.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="current-goal-shortterm" />
+    </element>
+    <element id="Extension.extension:current-goal-shortterm.value[x]:valueReference">
+      <path value="Extension.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Goal" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://rehappy.de/fhir/StructureDefinition/current-goal-shortterm-de/"/>
+      </binding>
+    </element>
+
+    <element id="Extension.extension:current-goal-midterm">
+      <path value="Extension.extension" />
+      <sliceName value="current-goal-midterm" />
+      <definition value="Erfassung des aktuellen, persönlichen mittelfristigen Ziels einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:current-goal-midterm.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="current-goal-midterm" />
+    </element>
+    <element id="Extension.extension:current-goal-midterm.value[x]:valueReference">
+      <path value="Extension.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Goal" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://rehappy.de/fhir/StructureDefinition/current-goal-midterm-de/"/>
+      </binding>
+    </element>
+
+    <element id="Extension.extension:current-goal-longterm">
+      <path value="Extension.extension" />
+      <sliceName value="current-goal-longterm" />
+      <definition value="Erfassung des aktuellen, persönlichen langfristigen Ziels einer Person im Rahmen der Begleitung von neurologischen Patienten durch individuelle Wissens- und Motivationsinhalte" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:current-goal-longterm.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="current-goal-longterm" />
+    </element>
+    <element id="Extension.extension:current-goal-longterm.value[x]:valueReference">
+      <path value="Extension.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Goal" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://rehappy.de/fhir/StructureDefinition/current-goal-longterm-de/"/>
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>
